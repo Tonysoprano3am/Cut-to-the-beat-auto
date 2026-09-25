@@ -1,0 +1,8 @@
+def onOffToOn(channel, sampleIndex, val, prev):
+    switch_op = op('switch1')
+    total_clips = len(switch_op.inputs)
+    
+    if total_clips > 0:
+        next_index = (switch_op.par.index + 1) % total_clips
+        switch_op.par.index = next_index
+    return
